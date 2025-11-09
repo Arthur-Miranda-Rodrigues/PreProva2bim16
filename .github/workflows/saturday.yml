@@ -18,11 +18,9 @@ jobs:
         run: |
          if [ "$(date +%u)" -eq 6 ]; then
            echo "Hoje é sábado!"
+           "Executando tarefas de sábado..."
+        
          else
            echo "Hoje não é sábado."
          fi
-      - name: Run Saturday Script
-        run: |
-          echo "Executando tarefas de sábado..."
-          # Adicione aqui os comandos que você deseja executar todo sábado
-        
+      
