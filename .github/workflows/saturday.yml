@@ -1,0 +1,26 @@
+name: Sábado
+
+on:
+  schedule:
+    - cron: '0 12 * * 6' # Executa todo sábado às 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Saturday Script
+        run: |
+          echo "Executando tarefas de sábado..."
+          # Adicione aqui os comandos que você deseja executar todo sábado
+      - name: avisar quando é sábado
+        run: |
+         if [ "$(date +%u)" -eq 6 ]; then
+           echo "Hoje é sábado!"
+         else
+           echo "Hoje não é sábado."
+         fi
