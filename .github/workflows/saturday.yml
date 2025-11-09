@@ -13,10 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run Saturday Script
-        run: |
-          echo "Executando tarefas de sábado..."
-          # Adicione aqui os comandos que você deseja executar todo sábado
+      
       - name: avisar quando é sábado
         run: |
          if [ "$(date +%u)" -eq 6 ]; then
@@ -24,3 +21,8 @@ jobs:
          else
            echo "Hoje não é sábado."
          fi
+      - name: Run Saturday Script
+        run: |
+          echo "Executando tarefas de sábado..."
+          # Adicione aqui os comandos que você deseja executar todo sábado
+        
